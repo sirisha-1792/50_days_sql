@@ -19,7 +19,7 @@ from cleaned_salaries) new_table
 where rn = 1;
 
 --3. Rank salary entries (rank salaries for each employee)
-select * from
+select emp_id, salary, rank_number from
 (select *, row_number()
     over (PARTITION BY emp_id
     order by salary_date asc)
@@ -28,10 +28,11 @@ from cleaned_salaries) new_table
 where rank_number = 1;
 
 --4. get Top 2 salary records per employee
-select * from
+select emp_id, salary, rank_number from
 (select *, row_number()
     over (PARTITION BY emp_id
     order by salary_date asc)
     as rank_number
 from cleaned_salaries) new_table
 where rank_number <= 2;
+
