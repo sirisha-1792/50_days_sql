@@ -10,9 +10,9 @@ where salary<0;
 
 -- Invalid ratings(from 1 to 5)
 select * from cleaned_performance
-where rating_46622 < 1 or rating_46622 > 5
-   or rating_46623 < 1 or rating_46623 > 5
-   or rating_46624 < 1 or rating_46624 > 5;
+where rating_2022 < 1 or rating_2022 > 5
+   or rating_2023< 1 or rating_2023 > 5
+   or rating_2024 < 1 or rating_2024 > 5;
 
 -- Fix invalid age
 update cleaned_employees

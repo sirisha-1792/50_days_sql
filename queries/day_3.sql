@@ -39,9 +39,9 @@ group by emp_id
 having count(*) >1 ;
 
 --ATTENDANCE TABLE
-select attendance_id,emp_id, count(*)
+select attendance_id,emp_id,attendance_date, status, count(*)
 from cleaned_attendance
-group by attendance_id, emp_id
+group by attendance_id, emp_id,attendance_date, status
 having count(*) > 1; 
 
 --SALARIES TABLE
@@ -49,3 +49,5 @@ select salary_id, emp_id, count(*)
 from cleaned_salaries
 group by salary_id, emp_id
 having count(*) > 1;
+
+

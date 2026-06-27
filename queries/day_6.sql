@@ -12,7 +12,7 @@ select min(salary) as min_salary,
        avg(salary) as avg_salary
 from cleaned_salaries where salary > 0;
 
--- clint rules max_salary 2,00,000 and min_salary 20,000
+-- client rules max_salary 2,00,000 and min_salary 20,000
 
 alter table cleaned_salaries
 add column is_outlier int;

@@ -32,3 +32,4 @@ where emp_id = '' or emp_id is NULL
     or rating_2022 = '' or rating_2022 is null
     or rating_2023 = '' or rating_2023 is null
     or rating_2024 = '' or rating_2024 is null;
+

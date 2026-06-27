@@ -26,11 +26,12 @@ select distinct hire_date from cleaned_employees;
 
 select emp_id , hire_date
 from cleaned_employees
-where hire_date = null;
+where hire_date is null;
 
 update cleaned_employees
 set hire_date = '2024-02-25'
-where emp_id = 62 or emp_id = 88 or emp_id = 97 or emp_id = 132;
+where hire_date is null;
+-- where emp_id = 62 or emp_id = 88 or emp_id = 97 or emp_id = 132;
 
 --- ATTENDANCE TABLE
 update cleaned_attendance

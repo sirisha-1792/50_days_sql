@@ -29,4 +29,4 @@ from cleaned_employees ce
 join cleaned_salaries cs
 on ce.emp_id = cs.emp_id
 group by ce.emp_id, ce.emp_name
-having count(cs.salary_id) > 1;
+having count(cs.salary_id) > 1;  

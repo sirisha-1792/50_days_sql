@@ -10,9 +10,19 @@ delete from cleaned_employees
 where emp_id in
 (select emp_id from cte where rn > 1);
 
+-- Dept table
+with cte as (
+    select * , row_number() over (PARTITION BY dept_id, dept_name
+    order by dept_id) as rn
+    from cleaned_departments
+)
+delete from cleaned_departments
+where dept_id in
+(select dept_id from cte where rn > 1);
+
 -- Salaries table
 with cte as(
-    select *, row_number() over (PARTITION BY salary_id, emp_id
+    select * , row_number() over (PARTITION BY salary_id, emp_id
     order by salary_id) as rn 
     from cleaned_salaries
 )
